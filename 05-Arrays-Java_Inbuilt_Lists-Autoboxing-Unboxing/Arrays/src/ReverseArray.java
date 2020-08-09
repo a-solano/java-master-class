@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * -Write a method called reverse() with an int array as a parameter.
 
@@ -15,32 +17,20 @@ Tip:
  */
 public class ReverseArray {
 
-    public static void printArray(int[] array) {
-        System.out.print("[");
-        for (int i = 0; i < array.length; i++) {
-            if (i == 0)
-                System.out.print(array[i]);
-            else
-                System.out.print(", " + array[i]);
-        }
-        System.out.print("]\n");
-    }
-
     public static void reverse(int[] array) {
-        System.out.print("Original Array: ");
-        printArray(array);
+
         int length = array.length / 2;
         for (int i = 0; i < length; i++) {
             int temp = array[i];
             array[i] = array[array.length - 1 - i];
             array[array.length - 1 - i] = temp;
         }
-        System.out.print("New Array: ");
-        printArray(array);
     }
 
     public static void main(String[] args) {
         int[] array = new int[] {1,2,3, 4};
+        System.out.println("Original Array: " + Arrays.toString(array));
         reverse(array);
+        System.out.println("New Array: " + Arrays.toString(array));
     }
 }
